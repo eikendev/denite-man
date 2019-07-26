@@ -1,0 +1,22 @@
+*denite-man.txt*	Man page source for Denite.
+
+Version: 0.0.1
+Author: eikendev
+License: MIT
+
+===============================================================================
+CONTENTS					*denite-man-contents*
+
+Introduction		|denite-man-introduction|
+
+===============================================================================
+INTRODUCTION					*denite-man-introduction*
+
+The *denite-man* plugin allows you to fuzzy find man pages within Neovim.
+Issue `:Denite man` inside Neovim to get a list of all man pages and filter
+for the ones you want to open.
+
+In order to use this plugin, you need to setup Denite first.
+
+===============================================================================
+vim:tw=78:ts=8:ft=help:norl:
