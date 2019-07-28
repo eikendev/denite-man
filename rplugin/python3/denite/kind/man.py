@@ -11,12 +11,12 @@ class Kind(Openable):
         self.name = 'man'
         self.default_action = 'open'
 
-        self._pattern = re.compile('^(\S+) \((\S+)\).*$')
+        self.__pattern = re.compile(r'^(\S+) \((\S+)\).*$')
 
     def action_open(self, context):
         target = context['targets'][0]
 
-        match = self._pattern.match(target['word'])
+        match = self.__pattern.match(target['word'])
         if match is None:
             return
 
