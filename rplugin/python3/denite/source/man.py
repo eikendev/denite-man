@@ -11,10 +11,7 @@ class Source(Base):
         self.name = 'man'
         self.kind = 'man'
 
-        self._cmd = ['man', '-k']
-
-    def on_init(self, context):
-        pass
+        self.__cmd = ['man', '-k']
 
     def gather_candidates(self, context):
         word = context['input']
@@ -22,7 +19,7 @@ class Source(Base):
         if len(word) == 0:
             word = '.'
 
-        command = self._cmd
+        command = self.__cmd
         command.append(word)
 
         process = subprocess.run(
