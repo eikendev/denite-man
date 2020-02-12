@@ -19,8 +19,13 @@ class Source(Base):
         if len(word) == 0:
             word = self._get_arg(context, 0, default='.')
 
+        sections = self._get_arg(context, 1, default=None)
+
         command = self.__cmd
         command.append(word)
+
+        if sections:
+            command += ['--section', sections]
 
         process = subprocess.run(
             command,
