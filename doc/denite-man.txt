@@ -8,15 +8,42 @@ License: MIT
 CONTENTS					*denite-man-contents*
 
 Introduction		|denite-man-introduction|
+Source Usage		|denite-man-source-usage|
 
 ===============================================================================
 INTRODUCTION					*denite-man-introduction*
 
 The *denite-man* plugin allows you to fuzzy find man pages within Neovim.
-Issue `:Denite man` inside Neovim to get a list of all man pages and filter
-for the ones you want to open.
+
+It introduces the 'man' *denite* source which can be used with `:Denite` (or other
+denite commands) to get a list of all/filtered man pages from all/specific
+sections.
 
 In order to use this plugin, you need to setup Denite first.
+
+===============================================================================
+SOURCE USAGE                                    *denite-man-source-usage*
+
+man         List all man pages or man pages filtered according to page
+            name/description keyword, from all or specific sections.
+
+            Source arguments (delimited by ':')
+                0. filter keyword - a regex string (empty - for no filtering)
+                1. sections - comma-separated list of sections (empty - all)
+                2. filtering type: 'desc' - by description (default)
+                                   'name' - by name
+
+            Denite input pattern may also be specified as filter keyword, takes
+            precedence over the arg. 0
+
+Examples:
+    `:Denite man:open`          - man pages, mentioning 'open'
+    `:Denite man -input=open`   - same as above
+    `:Denite man:open:2,3`      - man pages, mentioning 'open' in sections 2 and 3
+    `:Denite man:open:3:name`   - man pages with 'open' in name, in section 3
+    `:Denite man:open::name`    - man pages with 'open' in name, in all sections
+    `:Denite man::2`            - all section 2 man pages
+
 
 ===============================================================================
 vim:tw=78:ts=8:ft=help:norl:
