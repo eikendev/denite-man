@@ -1,7 +1,7 @@
 Usage
 -----
 
-The `denite-man` plugin allows you to fuzzy find man pages within [Neovim](https://neovim.io/) or [Vim](https://www.vim.org/).
+The `denite-man` plugin allows you to fuzzy-search man pages within [Neovim](https://neovim.io/) or [Vim](https://www.vim.org/).
 
 Usage examples:
  * `:Denite man`               - get a list of all man pages (and then manually filter for the ones you want to open).
