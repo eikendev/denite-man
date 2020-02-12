@@ -13,7 +13,7 @@ Source Usage		|denite-man-source-usage|
 ===============================================================================
 INTRODUCTION					*denite-man-introduction*
 
-The *denite-man* plugin allows you to fuzzy find man pages within Neovim.
+The *denite-man* plugin allows you to fuzzy-search man pages within Neovim.
 
 It introduces the 'man' *denite* source which can be used with `:Denite` (or other
 denite commands) to get a list of all/filtered man pages from all/specific
