@@ -19,7 +19,7 @@ It introduces the 'man' *denite* source which can be used with `:Denite` (or oth
 denite commands) to get a list of all/filtered man pages from all/specific
 sections.
 
-In order to use this plugin, you need to setup Denite first.
+In order to use this plugin, you need to setup *Denite* first.
 
 ===============================================================================
 SOURCE USAGE                                    *denite-man-source-usage*
