@@ -17,7 +17,7 @@ class Source(Base):
         word = context['input']
 
         if len(word) == 0:
-            word = '.'
+            word = self._get_arg(context, 0, default='.')
 
         command = self.__cmd
         command.append(word)
@@ -36,3 +36,18 @@ class Source(Base):
         candidates = [{'word': result, 'addr': result, 'kind': 'man'} for result in candidates]
 
         return candidates
+
+    @staticmethod
+    def _get_arg(context, idx, default):
+        args = context['args']
+        argc = len(args)
+
+        if argc <= idx:
+            return default
+
+        arg = args[idx]
+
+        if arg is None or arg == '':
+            return default
+
+        return arg
