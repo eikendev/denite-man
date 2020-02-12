@@ -37,7 +37,6 @@ class Source(Base):
 
         process = subprocess.run(
             command,
-            check=True,
             text=True,
             stdout=subprocess.PIPE,
         )
