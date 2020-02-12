@@ -11,7 +11,7 @@ class Source(Base):
         self.name = 'man'
         self.kind = 'man'
 
-        self.__cmd = ['man', '-k']
+        self.__cmd = ['man', '--apropos']
 
     def gather_candidates(self, context):
         word = context['input']
