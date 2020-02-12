@@ -4,14 +4,16 @@ import subprocess
 
 
 class Source(Base):
+    SEARCH_TYPE_SWITCH = {
+        'desc' : '--apropos',
+        'name' : '--whatis',
+    }
 
     def __init__(self, vim):
         super().__init__(vim)
 
         self.name = 'man'
         self.kind = 'man'
-
-        self.__cmd = ['man', '--apropos']
 
     def gather_candidates(self, context):
         word = context['input']
@@ -21,7 +23,13 @@ class Source(Base):
 
         sections = self._get_arg(context, 1, default=None)
 
-        command = self.__cmd
+        if word != '.':
+            search_type = self._get_arg(context, 2, default='desc')
+            assert(search_type in self.SEARCH_TYPE_SWITCH.keys())
+        else:
+            search_type = 'desc'
+
+        command = ['man', self.SEARCH_TYPE_SWITCH[search_type]]
         command.append(word)
 
         if sections:
