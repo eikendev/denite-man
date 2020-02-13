@@ -1,6 +1,6 @@
 *denite-man.txt*	Man page source for Denite.
 
-Version: 0.0.1
+Version: 0.0.2
 Author: eikendev
 License: MIT
 
